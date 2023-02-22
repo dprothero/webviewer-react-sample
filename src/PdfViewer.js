@@ -42,7 +42,7 @@ const PdfViewer = ({ docId }) => {
       console.log("event = ", event);
       console.log("target = ", target);
       console.log("rest of the args = ", rest);
-      oldOnTriggered.apply(this, target, event, ...rest);
+      oldOnTriggered.apply(this, [target, event, ...rest]);
     };
     Actions.GoTo.prototype.onTriggeredPatched = true;
   }, [instance]);
